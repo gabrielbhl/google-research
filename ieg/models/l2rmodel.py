@@ -218,7 +218,11 @@ class L2R(BaseModel):
 
     # end of parallel
     (pr_net_loss, pr_metaloss, pr_metaacc, pr_acc,
+<<<<<<< HEAD
      pr_weight, pr_labels) = self.strategy.experimental_run_v2(
+=======
+     pr_weight, pr_labels) = self.strategy.run(
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
          step_fn, args=(next(self.train_input_iterator),))
 
     # collect device variables

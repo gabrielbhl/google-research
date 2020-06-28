@@ -75,15 +75,25 @@ class ActorNetwork(tf.Module):
     log_std = LOG_STD_MIN + 0.5 * (LOG_STD_MAX - LOG_STD_MIN) * (log_std + 1)
     std = tf.exp(log_std)
     a_distribution = tfd.TransformedDistribution(
+<<<<<<< HEAD
         distribution=tfd.Normal(loc=0.0, scale=1.0),
+=======
+        distribution=tfd.Independent(
+            tfd.Normal(loc=tf.zeros(mean.shape), scale=1.0),
+            reinterpreted_batch_ndims=1),
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
         bijector=tfp.bijectors.Chain([
             tfp.bijectors.AffineScalar(shift=self._action_means,
                                        scale=self._action_mags),
             tfp.bijectors.Tanh(),
             tfp.bijectors.AffineScalar(shift=mean, scale=std),
+<<<<<<< HEAD
         ]),
         event_shape=[mean.shape[-1]],
         batch_shape=[mean.shape[0]])
+=======
+        ]))
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
     return a_distribution, a_tanh_mode
 
   def get_log_density(self, state, action):

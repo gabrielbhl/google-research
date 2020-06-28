@@ -9,11 +9,19 @@ Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algo
 
 AutoML-Zero aims to automatically discover computer programs that can solve machine learning tasks, starting from empty or random programs and using only basic math operations. The goal is to simultaneously search for all aspects of an ML algorithm&mdash;including the model structure and the learning strategy&mdash;while employing *minimal human bias*.
 
+<<<<<<< HEAD
 ![GIF for the experiment progress](progress.gif)
 
 Despite AutoML-Zero's challenging search space, *evolutionary search* shows promising results by discovering linear regression with gradient descent, 2-layer neural networks with backpropagation, and even algorithms that surpass hand designed baselines of comparable complexity. The figure above shows an example sequence of discoveries from one of our experiments, evolving algorithms to solve binary classification tasks. Notably, the evolved algorithms can be *interpreted*. Below is an analysis of the best evolved algorithm: the search process "invented" techniques like bilinear interactions, weight averaging, normalized gradient, and data augmentation (by adding noise to the inputs).
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
+=======
+![GIF for the experiment progress](https://storage.googleapis.com/gresearch/automl_zero/progress.gif)
+
+Despite AutoML-Zero's challenging search space, *evolutionary search* shows promising results by discovering linear regression with gradient descent, 2-layer neural networks with backpropagation, and even algorithms that surpass hand designed baselines of comparable complexity. The figure above shows an example sequence of discoveries from one of our experiments, evolving algorithms to solve binary classification tasks. Notably, the evolved algorithms can be *interpreted*. Below is an analysis of the best evolved algorithm: the search process "invented" techniques like bilinear interactions, weight averaging, normalized gradient, and data augmentation (by adding noise to the inputs).
+
+![GIF for the interpretation of the best evolved algorithm](https://storage.googleapis.com/gresearch/automl_zero/best_algo.gif)
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
 
 More examples, analysis, and details can be found in the [paper](https://arxiv.org/abs/2003.03384).
 

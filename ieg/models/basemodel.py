@@ -461,7 +461,11 @@ class BaseModel(Trainer):
       with tf.control_dependencies([minimizer_op, acc_update_op]):
         return tf.identity(loss), tf.identity(acc)
 
+<<<<<<< HEAD
     pr_losses, pr_acc = self.strategy.experimental_run_v2(
+=======
+    pr_losses, pr_acc = self.strategy.run(
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
         step_fn, args=(next(self.train_input_iterator),))
 
     mean_loss = self.strategy.reduce(tf.distribute.ReduceOp.MEAN, pr_losses)

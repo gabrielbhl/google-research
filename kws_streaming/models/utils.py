@@ -327,8 +327,11 @@ def model_to_tflite(sess,
   # this will enable audio_spectrogram and mfcc in TFLite
   converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS]
   converter.allow_custom_ops = True
+<<<<<<< HEAD
 
   converter.experimental_new_converter = True
+=======
+>>>>>>> 644f9f8cbfbc56c33eea7af6eb16db4a79e90bf1
   if optimizations:
     converter.optimizations = optimizations
   tflite_model = converter.convert()
